@@ -9,9 +9,8 @@
   "scripts": {
     "gen": "node scripts/generate.js"
   },
-  "author": "Tushar Mathur <tusharmath@gmail.com>",
   "license": "MIT",
   "workspaces": [
-    "workspace/darwin"
+    "packages/darwin"
   ]
 }
