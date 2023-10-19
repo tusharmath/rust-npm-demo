@@ -1,0 +1,16 @@
+{
+  "name": "npm-rust-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "gen": "node scripts/generate.js"
+  },
+  "author": "Tushar Mathur <tusharmath@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "workspace/darwin"
+  ]
+}
