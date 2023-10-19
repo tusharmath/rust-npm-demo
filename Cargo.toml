@@ -1,5 +1,5 @@
 [package]
-name = "npm-rust-demo"
+name = "rust-demo"
 version = "2.0.0"
 edition = "2021"
 authors = ["Tushar Mathur <tusharmath@gmail.com>"]

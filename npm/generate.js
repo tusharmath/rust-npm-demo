@@ -8,15 +8,15 @@ async function main() {
   const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
   const cargo = await fs
-    .readFile(path.resolve(__dirname, "../../cargo.toml"), "utf-8")
+    .readFile(path.resolve(__dirname, "../cargo.toml"), "utf-8")
     .then((data) => JSON.parse(JSON.stringify(toml.parse(data), null, 2)))
   const packageJson = await fs
-    .readFile(path.resolve(__dirname, "../package.json"), "utf-8")
+    .readFile(path.resolve(__dirname, "package.json"), "utf-8")
     .then(JSON.parse)
 
   for (const workspace of packageJson.workspaces) {
     const source = `../target/release/${cargo.package.name}`
-    const destination = path.resolve(__dirname, `../${workspace}/bin`)
+    const destination = path.resolve(__dirname, `${workspace}/bin`)
 
     // Create directories
     await fs.mkdir(destination, {recursive: true})
@@ -39,7 +39,7 @@ async function main() {
     console.log(workspacePackageJson)
     // Create package.json
     await fs.writeFile(
-      path.resolve(__dirname, `../${workspace}/package.json`),
+      path.resolve(__dirname, `${workspace}/package.json`),
       JSON.stringify(workspacePackageJson, null, 2)
     )
   }
