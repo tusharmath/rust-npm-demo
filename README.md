@@ -7,6 +7,6 @@
 2. Setup NPM workspaces
    ```bash
    cd npm
-   npm run gen
+   npm run prepare
    npm publish --workspaces
    ```

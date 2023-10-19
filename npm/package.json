@@ -7,8 +7,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "gen": "node scripts/generate.js",
-    "prepare": "npm run gen"
+    "prepare": "node scripts/generate.js"
   },
   "license": "MIT",
   "workspaces": [
