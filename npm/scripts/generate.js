@@ -30,7 +30,7 @@ async function main() {
       description: packageJson.description,
       author: packageJson.description,
       license: packageJson.license,
-      bin: "./bin/npm-rust-demo",
+      directories: {bin: "bin"},
     }
 
     // Create package.json
