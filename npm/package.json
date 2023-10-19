@@ -2,7 +2,8 @@
   "name": "npm-rust-demo",
   "version": "1.0.0",
   "private": true,
-  "description": "",
+  "description": "A simple demo of publishing a rust package on npm",
+  "author": "Tushar Mathur <tusharmath@gmail.com>",
   "main": "index.js",
   "type": "module",
   "scripts": {

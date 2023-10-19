@@ -24,20 +24,19 @@ async function main() {
       path.resolve(source),
       path.resolve(destination, FILE_NAME)
     )
-    const packageJson = {
-      name: "npm-rust-demo",
-      version: "1.0.0",
-      description: "A simple demo of npm package written in Rust",
-      type: "module",
+    const workspacePackageJson = {
+      name: packageJson.name,
+      version: packageJson.name,
+      description: packageJson.description,
+      author: packageJson.description,
+      license: packageJson.license,
       bin: "./bin/npm-rust-demo",
-      author: "Tushar Mathur <tusharmath@gmail.com>",
-      license: "MIT",
     }
 
     // Create package.json
     await fs.writeFile(
       path.resolve(__dirname, `../${workspace}/package.json`),
-      JSON.stringify(packageJson, null, 2)
+      JSON.stringify(workspacePackageJson, null, 2)
     )
   }
 }
