@@ -1,6 +1,6 @@
 [package]
-name = "rust-demo"
-version = "2.0.0"
+name = "rust-npm-demo"
+version = "1.0.0"
 edition = "2021"
 authors = ["Tushar Mathur <tusharmath@gmail.com>"]
 license = "MIT"
