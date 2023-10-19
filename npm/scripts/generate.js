@@ -26,7 +26,7 @@ async function main() {
     )
     const workspacePackageJson = {
       name: packageJson.name,
-      version: packageJson.name,
+      version: packageJson.version,
       description: packageJson.description,
       author: packageJson.description,
       license: packageJson.license,
