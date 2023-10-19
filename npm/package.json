@@ -13,5 +13,8 @@
   "license": "MIT",
   "workspaces": [
     "packages/darwin"
-  ]
+  ],
+  "dependencies": {
+    "toml": "^3.0.0"
+  }
 }
