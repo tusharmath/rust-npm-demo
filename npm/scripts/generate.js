@@ -17,7 +17,6 @@ async function main() {
     .readFile(path.resolve(__dirname, "../package.json"), "utf-8")
     .then(JSON.parse)
 
-  console.dir(cargo)
   for (const workspace of packageJson.workspaces) {
     const source = `../target/release/${FILE_NAME}`
     const destination = path.resolve(__dirname, `../${workspace}/bin`)
@@ -40,6 +39,7 @@ async function main() {
       directories: {bin: "bin"},
     }
 
+    console.log(workspacePackageJson)
     // Create package.json
     await fs.writeFile(
       path.resolve(__dirname, `../${workspace}/package.json`),
