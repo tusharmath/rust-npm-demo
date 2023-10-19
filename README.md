@@ -8,6 +8,5 @@
    ```bash
    cd npm
    npm i
-   npm run prepare
    npm publish --workspaces
    ```
