@@ -4,21 +4,18 @@ import * as path from "path"
 import {fileURLToPath} from "url"
 import * as toml from "toml"
 
-const FILE_NAME = "rust-npm-demo"
-
 async function main() {
   const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
   const cargo = await fs
     .readFile(path.resolve(__dirname, "../../cargo.toml"), "utf-8")
     .then((data) => JSON.parse(JSON.stringify(toml.parse(data), null, 2)))
-
   const packageJson = await fs
     .readFile(path.resolve(__dirname, "../package.json"), "utf-8")
     .then(JSON.parse)
 
   for (const workspace of packageJson.workspaces) {
-    const source = `../target/release/${FILE_NAME}`
+    const source = `../target/release/${cargo.package.name}`
     const destination = path.resolve(__dirname, `../${workspace}/bin`)
 
     // Create directories
@@ -27,7 +24,7 @@ async function main() {
     // Copy Binary
     await fs.copyFile(
       path.resolve(source),
-      path.resolve(destination, FILE_NAME)
+      path.resolve(destination, cargo.package.name)
     )
 
     const workspacePackageJson = {
